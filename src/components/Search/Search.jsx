@@ -1,9 +1,17 @@
 import { useState } from 'react';
-
+import {useDispatch} from 'react-redux'
+import {useSelector} from 'react-redux'
 function Search() {
     const [searchShow, setSearchShow] = useState('')
+    const dispatch = useDispatch();
+    const searchMovies = useSelector((store)=> store.searchReducer);
     const onHandler = (event) => {
         event.preventDefault();
+        dispatch({
+            type: "FETCH_DETAILS", 
+            payload: searchShow
+
+        })
         console.log('searching for show ' + searchShow);
     };
 

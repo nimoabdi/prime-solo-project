@@ -59,7 +59,7 @@ function App() {
           <ProtectedRoute
            
             exact
-            path="/series"
+            path="/shows"
           >
             <SeriesView />
           </ProtectedRoute>

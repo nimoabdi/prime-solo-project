@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 function SeriesView() {
@@ -9,7 +9,7 @@ function SeriesView() {
 
     useEffect(() => {
         dispatch({
-            type:'FETCH_SERIES'
+            type:'FETCH_DETAILS_SERIES'
         })
     },[])
 

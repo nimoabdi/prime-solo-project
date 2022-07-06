@@ -5,7 +5,7 @@ function* fetchSeriesDetails(action) {
     try {
     console.log('series id');
     const seriesId = action.payload
-    const res = yield axios.get(`/api/shows/${seriesId}`)
+    const res = yield axios.get(`/shows/${seriesId}`)
     yield put({
         type: 'SET_SERIES_DETAILS',
         payload: res.data
