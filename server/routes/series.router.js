@@ -5,13 +5,13 @@ const axios = require('axios');
 
 // displaying series 
 
-router.get('/:id', (req, res)=>{
+router.get('/', (req, res)=>{
     const {id} = req.params;
     console.log('series id', id)
 
     axios({
         method: 'GET',
-        url: `https://api.tvmaze.com/shows/${id}`,
+        url: `https://api.tvmaze.com/shows/1?embed=cast`,
         params: {
             api_key: process.env.SERIES_API, 
         }

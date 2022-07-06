@@ -50,8 +50,7 @@ function App() {
           </Route>
 
           <Route exact
-            path="/series"
-          >
+            path="/series" >
           <SeriesView />  
             
           </Route>
