@@ -1,9 +1,9 @@
-const searchReducer = (state = [], action => {
+const seriesDetails = (state = [], action => {
     switch (action.type) {
-        case 'CREATE_SERIES':
+        case 'SET_SERIES_DETAILS':
             return action.payload
             default:
             return state
     }
 })
-export default searchReducer;
+export default seriesDetails;
