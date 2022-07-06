@@ -3,9 +3,9 @@ import axios from 'axios';
 
 function* fetchSeries(action) {
     try {
-    console.log('series id', action.payload);
+    console.log('series id');
     let seriesId = action.payload
-    const res = yield axios.get(`/api/series/${seriesId}`)
+    const res = yield axios.get(`/series/${seriesId}`)
     yield put({
         type: 'SET_SERIES',
         payload: res.data
