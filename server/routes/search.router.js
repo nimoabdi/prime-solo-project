@@ -3,19 +3,20 @@ const pool = require('../modules/pool');
 const router = express.Router();
 const axios = require('axios');
 
-router.get('/', (req, res)=> {
+router.get('/:search', (req, res)=> {
     const search = req.params.search
     console.log('searching for', search)
 
     axios({
         method: 'GET',
-        url: ` https://api.tvmaze.com/search/shows?q=${search}`,
+        url: ` https://api.tvmaze.com/search/shows?`,
         params:{
             api_key: process.env.SERIES_API,
+            q: search,
         } 
     }).then((response) => {
         console.log(response.data)
-        res.send(response.data);
+        res.send(response.data.show);
   }).catch(err => {
         console.log(err)
         res.sendStatus(500);

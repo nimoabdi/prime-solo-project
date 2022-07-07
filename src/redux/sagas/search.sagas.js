@@ -5,9 +5,9 @@ function* fetchSeriesDetails(action) {
     try {
         console.log('series id');
         // const searchId = action.payload
-        const res = yield axios.get(`/api/search/${action.payload}`)
+        const res = yield axios.get(`/api/:search/${action.payload}`)
         yield put({
-            type: 'CREATE_SERIES',
+            type: 'ADD_SERIES',
             payload: res.data
         })
         }

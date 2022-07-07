@@ -21,7 +21,7 @@ function SeriesList() {
             console.log('The list item is:', item)
             return(
                 <>
-                <img src={show.id.url.image.original}></img>
+                <img src={shows.id.url.image.original}></img>
                 </>
             )
           })
