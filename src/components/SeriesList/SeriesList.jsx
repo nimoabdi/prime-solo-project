@@ -18,7 +18,7 @@ function SeriesList() {
         <div> 
           {shows && 
           shows.map((item)=>{
-            let push = item.show.image && item.show.image.original
+            let push = item.show.image && item.show.image.medium
             console.log('The list item is:', item)
            
             return(
