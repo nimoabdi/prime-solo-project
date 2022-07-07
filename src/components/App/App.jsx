@@ -19,6 +19,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import SeriesList from '../SeriesList/SeriesList';
+
 import Search from '../Search/Search';
 
 import './App.css';
@@ -70,6 +71,7 @@ function App() {
            path="/search"
          >
            <Search />
+           <SeriesList />
          </ProtectedRoute>
 
 

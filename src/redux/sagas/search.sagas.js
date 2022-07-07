@@ -1,13 +1,13 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 
-function* fetchSeriesDetails(action) {
+function* fetchSearch(action) {
     try {
-        console.log('series id');
+        console.log('series id', action.payload);
         // const searchId = action.payload
         const res = yield axios.get(`/api/:search/${action.payload}`)
         yield put({
-            type: 'ADD_SERIES',
+            type: 'SET_SEARCH',
             payload: res.data
         })
         }
@@ -16,6 +16,6 @@ function* fetchSeriesDetails(action) {
         }
 }
 function* searchSagas() {
-    yield takeEvery('FETCH_DETAILS', fetchSeriesDetails);
+    yield takeEvery('FETCH_SEARCH', fetchSearch);
 }
 export default searchSagas;

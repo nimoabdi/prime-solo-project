@@ -9,7 +9,7 @@ function Search() {
     const onHandler = (event) => {
         event.preventDefault();
         dispatch({
-            type: "FETCH_DETAILS", 
+            type: "FETCH_SEARCH", 
             payload: searchShow
 
         })

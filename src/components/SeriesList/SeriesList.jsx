@@ -2,26 +2,32 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 function SeriesList() {
-    const dispatch = useDispatch();
-    const shows = useSelector(store => store.showsReducer)
+    // const dispatch = useDispatch();
+    const shows = useSelector(store=>store.searchReducer)
     
-    console.log(shows);
+    // console.log(shows);
 
-    useEffect(() => {
-        dispatch({
-            type:'FETCH_SHOWS'
-        })
-    },[])
+    // useEffect(() => {
+    //     dispatch({
+    //         type:'FETCH_SHOWS'
+    //     })
+    // },[])
 
     return(
         <>
         <div> 
           {shows && 
           shows.map((item)=>{
+            // let push = item.schedule.image.original && item.schedule.image.medium 
             console.log('The list item is:', item)
             return(
                 <>
-                <img src={shows.id.url.image.original}></img>
+                <h3 className= "title">{item.show.name}</h3>
+                {/* <img src={push}></img> */}
+                <h3 className= "genre">{item.show.genres}</h3>
+                <h3 className= "summary">{item.show.summary}</h3>
+
+
                 </>
             )
           })
