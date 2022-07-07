@@ -18,7 +18,7 @@ function SeriesList() {
         <div> 
           {shows && 
           shows.map((item)=>{
-            let push = item.show.image && item.show.image.medium
+            let push = item.show.image && item.show.image.original
             console.log('The list item is:', item)
            
             return(
@@ -27,7 +27,8 @@ function SeriesList() {
                 
                 <img src={push} />
                 <h3 className= "genre">{item.show.genres}</h3>
-                <h3 className= "summary">{item.show.summary}</h3>
+                <h3 className= "summary" dangerouslySetInnerHTML={{__html: item.show.summary}}>
+                </h3>
 
 
                 </>
