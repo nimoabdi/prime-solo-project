@@ -18,7 +18,7 @@ import UserPage from '../UserPage/UserPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import SeriesView from '../SeriesView/SeriesView';
+import SeriesList from '../SeriesList/SeriesList';
 import Search from '../Search/Search';
 
 import './App.css';
@@ -61,7 +61,7 @@ function App() {
             exact
             path="/shows"
           >
-            <SeriesView />
+            <SeriesList />
           </ProtectedRoute>
 
           <ProtectedRoute

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
-import seriesDetails from './series.details.reducer';
+// import seriesDetails from './series.details.reducer';
 import searchReducer from './search.reducer';
 import showsReducer from './shows.reducer';
 
@@ -14,7 +14,7 @@ import showsReducer from './shows.reducer';
 const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user, // will have an id and username if someone is logged in
-  seriesDetails,
+  // seriesDetails,
   searchReducer,
   showsReducer,
 

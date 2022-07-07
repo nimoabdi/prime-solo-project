@@ -9,7 +9,7 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes
 const userRouter = require('./routes/user.router');
-const seriesDetailsRouter = require('./routes/series.details.router');
+// const seriesDetailsRouter = require('./routes/series.details.router');
 const searchRouter = require('./routes/search.router');
 const showsRouter = require('./routes/shows.router')
 
@@ -26,9 +26,9 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
-app.use('/shows', showsRouter)
-app.use('/search', searchRouter)
-app.use('/details', seriesDetailsRouter);
+app.use('/api/shows', showsRouter)
+app.use('/api/search', searchRouter)
+// app.use('/api/details', seriesDetailsRouter);
 
 // Serve static files
 app.use(express.static('build'));

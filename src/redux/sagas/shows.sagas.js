@@ -1,4 +1,4 @@
-import { takeLatest, put } from 'redux-saga/effects';
+import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
 
 function* fetchShows() {
@@ -11,7 +11,7 @@ function* fetchShows() {
     }    
 };
 
-function* createShows() {
+function* updateShows() {
     console.log('posting shows', action.payload)
         yield axios({
             method: 'POST',
@@ -21,7 +21,8 @@ function* createShows() {
 }
 
 function* showsSaga() {
-    yield takeLatest('FETCH_SHOWS', fetchShows)
+    yield takeEvery('FETCH_SHOWS', fetchShows);
+    yield takeEvery('UPDATE_SHOWS', updateShows);
     
 }
 export default showsSaga;
