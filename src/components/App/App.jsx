@@ -20,6 +20,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import SearchList from '../SearchList/SearchList';
 import Search from '../Search/Search';
+import SeriesSummary from '../SeriesSummary/SeriesSummary';
 
 import './App.css';
 
@@ -73,7 +74,13 @@ function App() {
            <SearchList />
          </ProtectedRoute>
 
-
+        <ProtectedRoute
+        
+        exact 
+        path="/deets"
+        >
+          <SeriesSummary />
+        </ProtectedRoute>
 
           <Route
             exact

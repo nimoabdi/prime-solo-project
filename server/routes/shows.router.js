@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
   
   });
 
-router.get('/', (req,res)=> {
+router.get('/summaryReducer/:id', (req,res)=> {
     const sqlQuery = `
 
     `

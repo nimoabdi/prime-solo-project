@@ -4,6 +4,7 @@ import user from './user.reducer';
 // import seriesDetails from './series.details.reducer';
 import searchReducer from './search.reducer';
 import showsReducer from './shows.reducer';
+import summaryReducer from './summary.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -17,6 +18,8 @@ const rootReducer = combineReducers({
   // seriesDetails,
   searchReducer,
   showsReducer,
+  summaryReducer,
+  
 
 });
 
