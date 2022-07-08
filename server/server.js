@@ -28,6 +28,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/shows', showsRouter)
 app.use('/api/:search', searchRouter)
+app.use('/api/currentwatch', currentWatch)
 // app.use('/api/details', seriesDetailsRouter);
 
 // Serve static files
