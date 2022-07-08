@@ -1,5 +1,5 @@
-// import { takeEvery, put } from 'redux-saga/effects';
-// import axios from 'axios';
+import { takeEvery, put } from 'redux-saga/effects';
+import axios from 'axios';
 
 // function* fetchShows() {
 //    // gets data from db
@@ -11,18 +11,18 @@
 //     }    
 // };
 
-// function* updateShows() {
-//     console.log('posting shows', action.payload)
-//         yield axios({
-//             method: 'POST',
-//             url: '/api/shows',
-//             data: action.payload
-//         })
-// }
+function* addCurrent(action) {
+    // console.log('in add current watch', action.payload)
+ yield axios({
+        method: 'POST',
+        url: '/api/shows',
+        data: action.payload
+    })
+}
 
-// function* showsSaga() {
-//     yield takeEvery('FETCH_SHOWS', fetchShows);
-//     yield takeEvery('UPDATE_SHOWS', updateShows);
-    
-// }
-// export default showsSaga;
+function* currentSagas() {
+    yield takeEvery('CURRENT_WATCH', addCurrent);
+    // yield takeEvery('FETCH_SHOWS', fetchShows);
+}
+export default currentSagas;
+

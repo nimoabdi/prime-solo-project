@@ -12,6 +12,7 @@ const userRouter = require('./routes/user.router');
 // const seriesDetailsRouter = require('./routes/series.details.router');
 const searchRouter = require('./routes/search.router');
 const showsRouter = require('./routes/shows.router')
+// const currentWatch = require('./routes/current.router')
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -28,7 +29,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/shows', showsRouter)
 app.use('/api/:search', searchRouter)
-app.use('/api/currentwatch', currentWatch)
+// app.use('/api/currentwatch', currentWatch)
 // app.use('/api/details', seriesDetailsRouter);
 
 // Serve static files

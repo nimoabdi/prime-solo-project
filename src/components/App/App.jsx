@@ -18,8 +18,7 @@ import UserPage from '../UserPage/UserPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import SeriesList from '../SeriesList/SeriesList';
-
+import SearchList from '../SearchList/SearchList';
 import Search from '../Search/Search';
 
 import './App.css';
@@ -56,22 +55,22 @@ function App() {
           <ProtectedRoute exact path="/About">
             <AboutPage />
           </ProtectedRoute>
-
+{/* 
           <ProtectedRoute
            
             exact
             path="/shows"
           >
             <SeriesList />
-          </ProtectedRoute>
+          </ProtectedRoute> */}
 
           <ProtectedRoute
            
            exact
            path="/search"
          >
-           <Search />
-           <SeriesList />
+         
+           <SearchList />
          </ProtectedRoute>
 
 

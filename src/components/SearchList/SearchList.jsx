@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Search from '../Search/Search';
 
-function SeriesList() {
+function SearchList() {
     const dispatch = useDispatch();
     const shows = useSelector(store=>store.searchReducer)
 
     const currentClick = (event) => {
-   const name = event.target.getAttribute("name")
-      const genres = event.target.getAttribute("genres")
-      const summary =event.target.getAttribute("summary")
-      const image =event.target.getAttribute("image")
+      const name = event.target.getAttribute ('name');
+      const genres = event.target.getAttribute('genres');
+      const summary =event.target.getAttribute('summary');
+      const image =event.target.getAttribute('image');
         dispatch({
           type: 'CURRENT_WATCH',
           payload: {name,genres,summary,image}
@@ -19,16 +20,10 @@ function SeriesList() {
 console.log('searchReducer------>',shows)
     }
 
-    // console.log(shows);
-
-    // useEffect(() => {
-    //     dispatch({
-    //         type:'FETCH_SHOWS'
-    //     })
-    // },[])
     
     return(
         <>
+         <Search />
         <div> 
           {shows && 
           shows.map((item)=>{
@@ -38,6 +33,7 @@ console.log('searchReducer------>',shows)
            
             return(
                 <>
+               
                 <div key={item.id}>
                 <h3 className= "title">{item.show.name}</h3>
                 <img className= "img" src={push} />
@@ -76,4 +72,4 @@ console.log('searchReducer------>',shows)
         </>
     )
 }
-export default SeriesList;
+export default SearchList;
