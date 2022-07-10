@@ -9,17 +9,19 @@ function SearchList() {
     const history = useHistory();
     const shows = useSelector(store=>store.searchReducer)
 
-    const currentClick = (event) => {
+    const Currentwatch = (event) => {
       const name = event.target.getAttribute ('name');
       const genres = event.target.getAttribute('genres');
       const summary =event.target.getAttribute('summary');
       const image =event.target.getAttribute('image');
         dispatch({
           type: 'CURRENT_WATCH',
-          payload: {name,genres,summary,image}
-        })
-   
-
+          payload: {
+            name,genres,summary,image
+          },
+          
+        });
+        history.push('/Currentwatch')
 console.log('searchReducer------>',shows)
     }
 
@@ -48,7 +50,7 @@ console.log('searchReducer------>',shows)
                   genres={item.show.genres}
                   summary={item.show.summary}
                   image={push}
-                  onClick={currentClick}
+                  onClick={Currentwatch}
         >Add to Currently Watching 
         </button>
                   <button

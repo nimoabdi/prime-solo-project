@@ -21,6 +21,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import SearchList from '../SearchList/SearchList';
 import Search from '../Search/Search';
 import SeriesSummary from '../SeriesSummary/SeriesSummary';
+import CurrentWatch from '../CurrentWatch/CurrentWatch';
 
 import './App.css';
 
@@ -77,9 +78,9 @@ function App() {
         <ProtectedRoute
         
         exact 
-        path="/deets"
+        path="/Currentwatch"
         >
-          <SeriesSummary />
+          <CurrentWatch />
         </ProtectedRoute>
 
           <Route

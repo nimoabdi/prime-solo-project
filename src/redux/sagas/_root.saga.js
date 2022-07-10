@@ -2,10 +2,9 @@ import { all } from 'redux-saga/effects';
 import loginSaga from './login.saga';
 import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
-// import seriesSaga from './series.details.sagas'
 import searchSagas from './search.sagas';
-import currentSagas from './shows.sagas'
-// import getSummary from './summary.saga';
+import showsSagas from './shows.sagas'
+
 
 
 // rootSaga is the primary saga.
@@ -20,11 +19,9 @@ export default function* rootSaga() {
     loginSaga(), // login saga is now registered
     registrationSaga(),
     userSaga(),
-    // seriesSaga(),
     searchSagas(),
-    // showsSaga,
-    currentSagas(),
-    // getSummary(),
+    showsSagas(),
+ 
 
   ]);
 }
