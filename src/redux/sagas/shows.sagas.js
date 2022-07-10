@@ -1,7 +1,7 @@
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
 
-function* fetchShows(action) {
+function* fetchShows() {
    // gets data from db
    try {
     const response = yield axios({
