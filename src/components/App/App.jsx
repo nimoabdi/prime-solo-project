@@ -19,9 +19,8 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import SearchList from '../SearchList/SearchList';
-import Search from '../Search/Search';
-import SeriesSummary from '../SeriesSummary/SeriesSummary';
 import CurrentWatch from '../CurrentWatch/CurrentWatch';
+import Watched from '../Watched/Watched';
 
 import './App.css';
 
@@ -82,6 +81,16 @@ function App() {
         >
           <CurrentWatch />
         </ProtectedRoute>
+
+        <ProtectedRoute
+        
+        exact 
+        path="/watchedlist"
+        >
+          <Watched />
+        </ProtectedRoute>
+
+
 
           <Route
             exact

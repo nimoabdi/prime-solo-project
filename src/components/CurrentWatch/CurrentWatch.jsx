@@ -7,6 +7,7 @@ function CurrentWatch() {
   const dispatch = useDispatch();
   const shows = useSelector((store) => store.showsReducer);
   const { id } = useParams();
+  const history = useHistory();
 
   useEffect(() => {
     dispatch({
@@ -23,13 +24,11 @@ function CurrentWatch() {
       type: "CURRENT_WATCH",
       payload: {
         name,
-        genres,
-        summary,
-        image,
+        image
       },
     });
-
-    console.log("searchReducer------>", shows);
+    history.push('/watchedlist')
+    console.log("showsReducer------>", shows);
   };
 
   return (
@@ -50,8 +49,11 @@ function CurrentWatch() {
                         <img src={shows.image} />
                       </li>
                     </ul>
-                    <button>Add to watched</button>
-                    <button>Add to wishlist</button>
+                    <button
+                    name={shows.name}
+                    image={shows.push}
+                    onClick={Watched}
+                    >Move to watched</button>
                     <button>Delete</button>
                   </div>
                 </div>
