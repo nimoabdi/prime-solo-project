@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Search from '../Search/Search';
-import SeriesSummary from '../SeriesSummary/SeriesSummary';
+
 
 function SearchList() {
     const dispatch = useDispatch();
@@ -26,7 +26,7 @@ console.log('searchReducer------>',shows)
     
     return(
         <>
-         <Search />
+        <Search />
         <div> 
           {shows && 
           shows.map((item)=>{
@@ -35,12 +35,23 @@ console.log('searchReducer------>',shows)
            
             return(
                 <>
-               
-                <div key={item.id} onClick={()=> history.push(`/summaryReducer/${item.id}`)} >
-           
-                <img className= "img" src={push} />
-       
-                  {/* <button
+              
+              <div key={item.id}>
+        <h3 className= "title">{item.show.name}</h3>
+        <img className= "img" src={push} />
+        <h3 className= "genre">{item.show.genres}</h3>
+        <h3 className= "summary" dangerouslySetInnerHTML={{__html: item.show.summary}}>
+        </h3>
+
+        <button 
+                  name={item.show.name}
+                  genres={item.show.genres}
+                  summary={item.show.summary}
+                  image={push}
+                  onClick={currentClick}
+        >Add to Currently Watching 
+        </button>
+                  <button
                       name={item.show.name}
                       genres={item.show.genres}
                       summary={item.show.summary}
@@ -51,7 +62,7 @@ console.log('searchReducer------>',shows)
                       summary={item.show.summary}
                       image={push}>
                        WishList
-                  </button> */}
+                  </button>
 
                   </div>
                 </>

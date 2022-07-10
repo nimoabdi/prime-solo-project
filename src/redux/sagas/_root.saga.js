@@ -5,7 +5,7 @@ import userSaga from './user.saga';
 // import seriesSaga from './series.details.sagas'
 import searchSagas from './search.sagas';
 import currentSagas from './shows.sagas'
-import getSummary from './summary.saga';
+// import getSummary from './summary.saga';
 
 
 // rootSaga is the primary saga.
@@ -24,7 +24,7 @@ export default function* rootSaga() {
     searchSagas(),
     // showsSaga,
     currentSagas(),
-    getSummary(),
+    // getSummary(),
 
   ]);
 }
