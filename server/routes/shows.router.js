@@ -51,4 +51,22 @@ router.post('/', (req,res)=> {
     })
 });
 
+router.delete('/:id', (req, res)=> {
+  console.log('books deleted id ', req.params.id);
+  const sqlQuery = `
+  DELETE FROM "series"
+  WHERE "id" =$1;
+  `;
+  const sqlValues = [req.params.id];
+  pool
+  .query(sqlQuery, sqlValues)
+    .then( result => {
+      res.send(result.rows);
+    })
+    .catch(err => {
+     console.error('error in delete', err)
+      res.sendStatus(500)
+    })
+})
+
 module.exports = router;

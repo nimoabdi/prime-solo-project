@@ -12,10 +12,19 @@ function CurrentWatch() {
   useEffect(() => {
     dispatch({
       type: "FETCH_SHOWS",
-      payload: id,
+
     });
-    console.log("in the fetch current watch>>>>>>>");
   }, []);
+
+//   const handleDelete = ()=>{
+//     dispatch({
+//         type:'DELETE_SHOW',
+//         payload: id,
+//     })
+//     console.log("in the fetch current watch>>>>>>>", );
+
+// }
+
 
   const Watched = (event) => {
     const name = event.target.getAttribute("name");
@@ -33,6 +42,7 @@ function CurrentWatch() {
 
   return (
     <>
+    {/* {JSON.stringify(shows)} */}
       <div>
         {shows &&
           shows.map((shows) => {
@@ -41,22 +51,8 @@ function CurrentWatch() {
 
             return (
               <>
-                <div>
-                  <div>
-                    <ul>
-                      <li>
-                        Title: {shows.name}
-                        <img src={shows.image} />
-                      </li>
-                    </ul>
-                    <button
-                    name={shows.name}
-                    image={shows.push}
-                    onClick={Watched}
-                    >Move to watched</button>
-                    <button>Delete</button>
-                  </div>
-                </div>
+                <Shows Shows={shows} /> 
+
               </>
             );
           })}

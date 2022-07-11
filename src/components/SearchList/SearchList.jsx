@@ -53,18 +53,6 @@ console.log('searchReducer------>',shows)
                   onClick={Currentwatch}
         >Add to Currently Watching 
         </button>
-                  <button
-                      name={item.show.name}
-                      genres={item.show.genres}
-                      summary={item.show.summary}
-                      image={push}
-                >✅</button>
-                <button name={item.show.name}
-                      genres={item.show.genres}
-                      summary={item.show.summary}
-                      image={push}>
-                       WishList
-                  </button>
 
                   </div>
                 </>

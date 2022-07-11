@@ -27,9 +27,26 @@ function* addCurrent(action) {
     })
 }
 
+function* deleteShow(action) {
+    try {
+        const response = yield axios({
+          method: 'DELETE',
+          url: `/api/shows/${action.payload}`,
+        })
+        yield put({
+          type: 'FETCH_SHOWS'
+        })
+      } catch {
+        console.log('ERROR/DELETE Books');
+      }
+    }
+
+
 function* showsSagas() {
     yield takeEvery('CURRENT_WATCH', addCurrent);
     yield takeEvery('FETCH_SHOWS', fetchShows);
+    yield takeEvery('DELETE_SHOW', deleteShow);
+    
 }
 export default showsSagas;
 

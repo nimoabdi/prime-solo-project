@@ -1,24 +1,30 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 
-function Shows({show}) {
-    const dispatch = useDispatch();
-    const history = useHistory();
 
-    const [completed, setCompleted] = useState(false);
+function Shows({Shows}) {
+    const dispatch = useDispatch();
+    
+
+    const handleDelete = ()=>{
+        dispatch({
+            type:'DELETE_SHOW',
+            payload: Shows.id,
+        })
+        console.log("in the fetch current watch>>>>>>>", Shows.id);
+    
+    }
+    
     return (
         <div>
             <ul>
                 <li>
-                    Title: {show.name}
-                    Genre: {show.genres}
-                    Summary: {show.summary}
-                    <img src={show.image} alt={show.title}/>
+                    Title: {Shows.name}
+                    <img src={Shows.image} alt={Shows.title}/>
                 </li>
             </ul>
                 <button>Add to watched</button>
-                <button>Add to wishlist</button>
-                <button>Delete</button>
+                <button onClick={handleDelete}>Delete</button>
         </div>
     )
 }

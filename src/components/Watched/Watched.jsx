@@ -3,10 +3,31 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 
 function Watched() {
+    const dispatch = useDispatch();
+  const shows = useSelector((store) => store.showsReducer);
+  const { id } = useParams();
+
+    useEffect(() => {
+        dispatch({
+          type: "FETCH_SHOWS",
+          payload: id,
+        });
+        console.log("in the fetch current watch>>>>>>>");
+      }, []);
 
     return (
         <>
+        
+         <div>
+        {
+
+          shows.map((shows) => {
+            // let push = item.show.image && item.show.image.original
+            console.log("The list item is:");
+            return (
+                <>
           <div>
+          {shows.watched === true ?
                   <div>
                     <ul>
                       <li>
@@ -14,16 +35,16 @@ function Watched() {
                         <img src={shows.image} />
                       </li>
                     </ul>
-                    <button
-                    name={shows.name}
-                    image={shows.push}
-                    onClick={Watched}
-                    >Move to watched</button>
-                    <button>Delete</button>
+
                   </div>
+                  : <h1>Works</h1>  
+                }
                 </div>
               </>
             );
-    
+        })}
+        </div>
+      </>
+    )
 }
 export default Watched;
