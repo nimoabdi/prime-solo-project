@@ -7,14 +7,14 @@ const dispatch = useDispatch();
   const shows = useSelector((store) => store.showsReducer);
   const { id } = useParams();
 
-    useEffect(() => {
-        dispatch({
+    // useEffect(() => {
+    //     dispatch({
         
-          type: "FETCH_UPDATE",
-          payload: id,
-        });
-        console.log("in the fetch current watch>>>>>>>", ) ;
-      }, []);
+    //       type: "FETCH_UPDATE",
+    //       payload: id,
+    //     });
+    //     console.log("in the fetch current watch>>>>>>>", ) ;
+    //   }, []);
 
     return (
         <>

@@ -59,6 +59,6 @@ function* showsSagas() {
   yield takeEvery("CURRENT_WATCH", addCurrent);
   yield takeEvery("FETCH_SHOWS", fetchShows);
   yield takeEvery("DELETE_SHOW", deleteShow);
-  yield takeEvery("FETCH_UPDATE", UpdateShow);
+  yield takeEvery("UPDATE_SHOW", UpdateShow);
 }
 export default showsSagas;

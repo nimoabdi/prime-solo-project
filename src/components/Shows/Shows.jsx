@@ -23,11 +23,9 @@ function Shows({ Shows }) {
     const name = event.target.getAttribute("name");
     const image = event.target.getAttribute("image");
     dispatch({
-      type: "CURRENT_WATCH",
-      payload: {
-        name,
-        image,
-      },
+      type: "UPDATE_SHOW",
+      payload: Shows.id
+      ,
     });
     // history.push('/watchedlist')
     console.log("showsReducer------>", Shows);

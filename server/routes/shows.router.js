@@ -76,7 +76,7 @@ router.put('/:id', (req, res)=> {
   SET "watched" = $1
   WHERE "id" =$2;
   `;
-  const sqlParams = [true, [req.params.id]];
+  const sqlParams = [true, req.params.id];
   pool
   .query(sqlQuery, sqlParams)
     .then(()=> {
