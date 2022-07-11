@@ -8,8 +8,12 @@ import {Box} from "@mui/system";
 function Search() {
     const [autoComp, setAutoComp] = useState([]);
 
-
-
+    useEffect(()=> {
+        fetch(`https://api.tvmaze.com/search/shows?`)
+        .then((response)=> response.json())
+        .then((json)=> setAutoComp(json.data))
+    }, []);
+    console.log(autoComp)
 
     const [searchShow, setSearchShow] = useState('')
     const dispatch = useDispatch();

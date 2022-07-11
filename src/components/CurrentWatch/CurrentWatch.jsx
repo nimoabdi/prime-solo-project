@@ -16,18 +16,6 @@ function CurrentWatch() {
     });
   }, []);
 
-//   const handleDelete = ()=>{
-//     dispatch({
-//         type:'DELETE_SHOW',
-//         payload: id,
-//     })
-//     console.log("in the fetch current watch>>>>>>>", );
-
-// }
-
-
-  
-
   return (
     <>
     {/* {JSON.stringify(shows)} */}

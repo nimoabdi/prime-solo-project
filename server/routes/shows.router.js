@@ -31,7 +31,7 @@ router.post('/', (req,res)=> {
     INSERT INTO "series"
     ("user_id", "name", "image", "summary")
     VALUES
-    ($1, $2, $3, $4)
+    ($1, $2, $3, $4);
     `;
 
     const sqlValues = [
@@ -79,14 +79,12 @@ router.put('/:id', (req, res)=> {
   const sqlParams = [true, [req.params.id]];
   pool
   .query(sqlQuery, sqlParams)
-    .then( result => {
-      res.send(200);
+    .then(()=> {
+      res.send(204);
     })
     .catch(err => {
      console.error('error in PUTT', err)
       res.sendStatus(500)
     })
 })
-
-
 module.exports = router;
