@@ -67,6 +67,26 @@ router.delete('/:id', (req, res)=> {
      console.error('error in delete', err)
       res.sendStatus(500)
     })
+});
+router.put('/:id', (req, res)=> {
+  console.log('put console ', req.params.id);
+  
+  const sqlQuery = `
+  UPDATE  "series" 
+  SET "watched" = $1
+  WHERE "id" =$2;
+  `;
+  const sqlParams = [true, [req.params.id]];
+  pool
+  .query(sqlQuery, sqlParams)
+    .then( result => {
+      res.send(200);
+    })
+    .catch(err => {
+     console.error('error in PUTT', err)
+      res.sendStatus(500)
+    })
 })
+
 
 module.exports = router;

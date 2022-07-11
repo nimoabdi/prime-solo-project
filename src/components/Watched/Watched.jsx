@@ -3,21 +3,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 
 function Watched() {
-    const dispatch = useDispatch();
+const dispatch = useDispatch();
   const shows = useSelector((store) => store.showsReducer);
   const { id } = useParams();
 
     useEffect(() => {
         dispatch({
-          type: "FETCH_SHOWS",
+        
+          type: "FETCH_UPDATE",
           payload: id,
         });
-        console.log("in the fetch current watch>>>>>>>");
+        console.log("in the fetch current watch>>>>>>>", ) ;
       }, []);
 
     return (
         <>
-        
+
          <div>
         {
 

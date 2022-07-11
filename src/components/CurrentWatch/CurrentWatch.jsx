@@ -26,19 +26,7 @@ function CurrentWatch() {
 // }
 
 
-  const Watched = (event) => {
-    const name = event.target.getAttribute("name");
-    const image = event.target.getAttribute("image");
-    dispatch({
-      type: "CURRENT_WATCH",
-      payload: {
-        name,
-        image
-      },
-    });
-    history.push('/watchedlist')
-    console.log("showsReducer------>", shows);
-  };
+  
 
   return (
     <>
