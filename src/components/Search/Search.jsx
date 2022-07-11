@@ -1,7 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
+import TextField from "@mui/material/TextField";
+import Stack from "@mui/material/Stack";
+import { Autocomplete } from "@mui/material/Autocomplete";
+import {Box} from "@mui/system";
 function Search() {
+    const [autoComp, setAutoComp] = useState([]);
+
+
+
+
     const [searchShow, setSearchShow] = useState('')
     const dispatch = useDispatch();
     // const searchMovies = useSelector((store)=> store.searchReducer);

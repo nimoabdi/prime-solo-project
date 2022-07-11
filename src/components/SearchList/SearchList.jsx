@@ -50,7 +50,7 @@ console.log('searchReducer------>',shows)
                   genres={item.show.genres}
                   summary={item.show.summary}
                   image={push}
-                  onClick={Currentwatch}
+                  className="btn btn-block" onClick={Currentwatch}
         >Add to Currently Watching 
         </button>
 

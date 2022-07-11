@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
+import swal from 'sweetalert';
+
 
 
 function Shows({Shows}) {
@@ -17,6 +19,11 @@ function Shows({Shows}) {
     
     }
     const Watched = (event) => {
+        swal({
+            title: "Added to watched 👍",
+            text: "Nice",
+            icon: "success",
+          });
         const name = event.target.getAttribute("name");
         const image = event.target.getAttribute("image");
         dispatch({
@@ -26,7 +33,7 @@ function Shows({Shows}) {
             image
           },
         });
-        history.push('/watchedlist')
+        // history.push('/watchedlist')
         console.log("showsReducer------>", Shows);
       };
     
@@ -38,8 +45,8 @@ function Shows({Shows}) {
                     <img src={Shows.image} alt={Shows.title}/>
                 </li>
             </ul>
-                <button onClick={handleDelete}>Delete</button>
-                <button onClick={Watched}> add to watch</button>
+                <button className="btn btn-block" onClick={handleDelete}>Delete</button>
+                <button className="btn btn-block" onClick={Watched}> add to watched</button>
 
         </div>
     )
