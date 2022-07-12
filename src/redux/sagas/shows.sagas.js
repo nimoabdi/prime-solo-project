@@ -48,17 +48,34 @@ function* updateShow(action) {
       url: `/api/shows/${action.payload}`,
     });
     yield put({
-      type: "SET_UPDATED_SHOWS",
+      type: "FETCH_SHOWS",
     });
   } catch {
     console.log("ERROR/PUT SHOWS");
   }
 }
 
+function* fetchCompleted() {
+    
+    try {
+      const response = yield axios({
+        method: 'GET',
+        url: `/completed`,
+      });
+      console.log('GET Completed SHOWS:', response.data);
+      yield put({ type: 'SET_UPDATED_SHOWS', payload: response.data });
+  
+    } catch {
+      console.log('GET/COMPLETED shows error');
+    }
+  
+  }
+
 function* showsSagas() {
   yield takeEvery("CURRENT_WATCH", addCurrent);
   yield takeEvery("FETCH_SHOWS", fetchShows);
   yield takeEvery("DELETE_SHOW", deleteShow);
   yield takeEvery("UPDATE_SHOW", updateShow);
+  yield takeEvery("FETCH_COMPLETED_SHOWS", fetchCompleted);
 }
 export default showsSagas;

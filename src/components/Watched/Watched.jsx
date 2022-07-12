@@ -7,18 +7,18 @@ const dispatch = useDispatch();
 //   const shows = useSelector((store) => store.showsReducer);
   const { id } = useParams();
 
+//   useEffect(() => {
+//     dispatch({
+//       type: "UPDATE_SHOW",
 
+//     });
+//   }, []);
 
     return (
         <>
 
          <div>
-        {
-
-          shows.map((shows) => {
-            // let push = item.show.image && item.show.image.original
-            console.log("The list item is:");
-            return (
+        
                 <>
           <div>
           {shows.watched === true ?
@@ -36,7 +36,7 @@ const dispatch = useDispatch();
                 </div>
               </>
             );
-        })}
+        
         </div>
       </>
     )
