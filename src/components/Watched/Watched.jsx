@@ -2,19 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 
-function Watched() {
+function Watched({shows}) {
 const dispatch = useDispatch();
-  const shows = useSelector((store) => store.showsReducer);
+//   const shows = useSelector((store) => store.showsReducer);
   const { id } = useParams();
 
-    // useEffect(() => {
-    //     dispatch({
-        
-    //       type: "FETCH_UPDATE",
-    //       payload: id,
-    //     });
-    //     console.log("in the fetch current watch>>>>>>>", ) ;
-    //   }, []);
+
 
     return (
         <>

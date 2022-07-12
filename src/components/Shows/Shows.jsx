@@ -7,6 +7,7 @@ function Shows({ Shows }) {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  // deleted from current watching
   const handleDelete = () => {
     dispatch({
       type: "DELETE_SHOW",
@@ -14,6 +15,8 @@ function Shows({ Shows }) {
     });
     console.log("in the fetch current watch>>>>>>>", Shows.id);
   };
+
+// watched component
   const Watched = (event) => {
     swal({
       title: "Added to watched 👍",

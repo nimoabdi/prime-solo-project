@@ -41,14 +41,14 @@ function* deleteShow(action) {
   }
 }
 
-function* UpdateShow(action) {
+function* updateShow(action) {
   try {
     const response = yield axios({
       method: "PUT",
       url: `/api/shows/${action.payload}`,
     });
     yield put({
-      type: "FETCH_SHOWS",
+      type: "SET_UPDATED_SHOWS",
     });
   } catch {
     console.log("ERROR/PUT SHOWS");
@@ -59,6 +59,6 @@ function* showsSagas() {
   yield takeEvery("CURRENT_WATCH", addCurrent);
   yield takeEvery("FETCH_SHOWS", fetchShows);
   yield takeEvery("DELETE_SHOW", deleteShow);
-  yield takeEvery("UPDATE_SHOW", UpdateShow);
+  yield takeEvery("UPDATE_SHOW", updateShow);
 }
 export default showsSagas;
