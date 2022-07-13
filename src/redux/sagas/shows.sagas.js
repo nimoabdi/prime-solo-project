@@ -60,10 +60,10 @@ function* fetchCompleted() {
     try {
       const response = yield axios({
         method: 'GET',
-        url: `/completed`,
+        url: `/api/completed`,
       });
       console.log('GET Completed SHOWS:', response.data);
-      yield put({ type: 'SET_UPDATED_SHOWS', payload: response.data[0] });
+      yield put({ type: 'SET_UPDATED_SHOWS', payload: response.data });
   
     } catch {
       console.log('GET/COMPLETED shows error');
@@ -77,13 +77,14 @@ function* fetchCompleted() {
     try {
       const response = yield axios({
         method: 'PUT',
-        url: `/shows/${action.payload}`,
+        url: `/api/shows/${action.payload}`,
+      
       })
       yield put({
         type: 'FETCH_COMPLETED_SHOWS'
       })
     } catch {
-      console.log('ERROR/COMPLETE SHows');
+      console.log('ERROR/COMPLETE SHows', action.payload);
     }
   }
   
@@ -95,5 +96,6 @@ function* showsSagas() {
   yield takeEvery("DELETE_SHOW", deleteShow);
   yield takeEvery("UPDATE_SHOW", updateShow);
   yield takeEvery("FETCH_COMPLETED_SHOWS", fetchCompleted);
+  yield takeEvery("COMPLETED_SHOWS", completeShow);
 }
 export default showsSagas;

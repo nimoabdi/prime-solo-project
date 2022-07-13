@@ -5,8 +5,6 @@ import { useHistory, useParams } from "react-router-dom";
 function Completed({show}) {
     const dispatch = useDispatch();
 
-
-
     return (
         <div>
             Title: {show.name}

@@ -18,6 +18,7 @@ function Shows({ Shows }) {
 
 // watched component
   const Watched = (event) => {
+   
     swal({
       title: "Added to watched 👍",
       text: "Nice",
@@ -31,7 +32,7 @@ function Shows({ Shows }) {
     });
     history.push('/watchedlist')
     console.log("showsReducer------>", Shows);
-  };
+};
 
   return (
     <div>

@@ -5,10 +5,11 @@ const pool = require('../modules/pool');
 router.get('/', (req, res)=> {
     const sqlQuery = `
     SELECT * FROM series
-    WHERE user_id = $1 AND watched = $2 
+    WHERE watched = $1 AND user_id =$2
     ;
     `;
-    const sqlValues = [req.params.id, true];
+    const sqlValues = [true, req.user.id];
+    console.log('swlvalues', req.user.id)
     pool.query(sqlQuery, sqlValues)
     .then((dbRes)=> {
         res.send(dbRes.rows);
