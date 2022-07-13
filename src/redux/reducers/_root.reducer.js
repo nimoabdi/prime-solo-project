@@ -19,8 +19,6 @@ const rootReducer = combineReducers({
   searchReducer,
   showsReducer,
   updatedShows,
-  
-  
 
 });
 

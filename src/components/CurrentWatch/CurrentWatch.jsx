@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import Shows from "../Shows/Shows";
 
+
 function CurrentWatch() {
   const dispatch = useDispatch();
   const shows = useSelector((store) => store.showsReducer);
@@ -28,10 +29,16 @@ function CurrentWatch() {
             return (
               <>
                 <Shows Shows={shows} /> 
-
+                
               </>
+              
             );
           })}
+      </div>
+      <div>
+        <button key={shows.id} onClick={()=> history.push(`/search/${shows.id}`)} >
+            Search
+        </button>
       </div>
     </>
   );

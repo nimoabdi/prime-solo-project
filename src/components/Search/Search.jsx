@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
-import '../'
+import TextField from '@material-ui/core/TextField'
 
 function Search() {
 
@@ -22,7 +22,7 @@ function Search() {
     return (
         <div className="searchbar">
             <form className="searchbar_form">
-                <input type="text" placeholder="Search Show" 
+            <TextField size='small' label='Title' variant='outlined' color='secondary' type="text" placeholder="Search Show" 
                 value={searchShow} onChange={(event)=> setSearchShow(event.target.value)}
                 />
                 <button className="btn btn-block" onClick={onHandler}>SEARCH</button>

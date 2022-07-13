@@ -1,44 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
+import Completed from "../Completed/Completed";
 
-function Watched({shows}) {
+function Watched() {
 const dispatch = useDispatch();
-//   const shows = useSelector((store) => store.showsReducer);
-  const { id } = useParams();
+  const updatedShows = useSelector((store) => store.updatedShows);
+useEffect(() => {
+    dispatch({
+      type: "FETCH_COMPLETED_SHOWS",
+    });
+  }, []);
 
-//   useEffect(() => {
-//     dispatch({
-//       type: "UPDATE_SHOW",
 
-//     });
-//   }, []);
 
     return (
-        <>
+        <div>
+            {updatedShows.map((show)=> {
+                return <Completed key={show.id} show={show}/>
+                    
+                
+            })
 
-         <div>
-        
-                <>
-          <div>
-          {shows.watched === true ?
-                  <div>
-                    <ul>
-                      <li>
-                        Title: {shows.name}
-                        <img src={shows.image} />
-                      </li>
-                    </ul>
-
-                  </div>
-                  : <h1>not working</h1>  
-                }
-                </div>
-              </>
-            );
-        
+            }
         </div>
-      </>
+
     )
 }
 export default Watched;

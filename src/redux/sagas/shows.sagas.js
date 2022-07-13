@@ -63,13 +63,31 @@ function* fetchCompleted() {
         url: `/completed`,
       });
       console.log('GET Completed SHOWS:', response.data);
-      yield put({ type: 'SET_UPDATED_SHOWS', payload: response.data });
+      yield put({ type: 'SET_UPDATED_SHOWS', payload: response.data[0] });
   
     } catch {
       console.log('GET/COMPLETED shows error');
     }
   
   }
+
+
+  function* completeShow(action) {
+    
+    try {
+      const response = yield axios({
+        method: 'PUT',
+        url: `/shows/${action.payload}`,
+      })
+      yield put({
+        type: 'FETCH_COMPLETED_SHOWS'
+      })
+    } catch {
+      console.log('ERROR/COMPLETE SHows');
+    }
+  }
+  
+
 
 function* showsSagas() {
   yield takeEvery("CURRENT_WATCH", addCurrent);

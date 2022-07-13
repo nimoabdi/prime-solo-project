@@ -29,16 +29,18 @@ router.post('/', (req,res)=> {
     
     const sqlQuery = `
     INSERT INTO "series"
-    ("user_id", "name", "image", "summary")
+    ("user_id", "name", "image", "watched", "summary")
     VALUES
-    ($1, $2, $3, $4);
+    ($1, $2, $3, $4, $5);
     `;
 
     const sqlValues = [
         req.user.id,
         req.body.name,
         req.body.image,
-        req.body.summary,
+        false,
+        req.body.summary
+        
     ];
     pool.query(sqlQuery, sqlValues)
     .then((dbRes) => {
@@ -74,8 +76,8 @@ router.put('/:id', (req, res)=> {
   
   const sqlQuery = `
   UPDATE  "series" 
-  SET "watched" = $1
-  WHERE "id" =$2;
+  SET watched = $1
+  WHERE id =$2;
   `;
   const sqlParams = [true, req.params.id];
   pool
