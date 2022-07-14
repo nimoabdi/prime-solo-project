@@ -8,7 +8,7 @@ function Completed({show}) {
     return (
         <div>
             Title: {show.name}
-            <img src={show.image} alt={show.title} />
+            <img className= "img" src={show.image} alt={show.title} />
 
         </div>
     )

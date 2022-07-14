@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import swal from "sweetalert";
+import './Shows.css'
 
 function Shows({ Shows }) {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ function Shows({ Shows }) {
       <ul>
         <li>
           Title: {Shows.name}
-          <img src={Shows.image} alt={Shows.title} />
+          <img className= "img" src={Shows.image} alt={Shows.title} />
         </li>
       </ul>
       <button className="btn btn-block" onClick={handleDelete}>

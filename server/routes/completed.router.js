@@ -9,7 +9,7 @@ router.get('/', (req, res)=> {
     ;
     `;
     const sqlValues = [true, req.user.id];
-    console.log('swlvalues', req.user.id)
+    console.log('sqlvalues', req.user.id)
     pool.query(sqlQuery, sqlValues)
     .then((dbRes)=> {
         res.send(dbRes.rows);

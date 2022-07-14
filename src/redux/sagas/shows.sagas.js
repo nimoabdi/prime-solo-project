@@ -71,7 +71,6 @@ function* fetchCompleted() {
   
   }
 
-
   function* completeShow(action) {
     
     try {
@@ -88,6 +87,23 @@ function* fetchCompleted() {
     }
   }
   
+  function* rateShow(action) {
+    console.log('rateShow action.payload', action.payload.id)
+     const rating = action.payload
+    try {
+      const response = yield axios({
+        method: 'PUT',
+        url: `/rate/${rating.id}`,
+        data: action.payload
+      })
+      console.log('response RATE SHOW--------->',response)
+      yield put({
+        type: 'FETCH_COMPLETED_SHOWS' ,payload: response.data
+      })
+    } catch {
+      console.log('ERROR/PUT RATING shows');
+    }
+  }
 
 
 function* showsSagas() {
@@ -97,5 +113,6 @@ function* showsSagas() {
   yield takeEvery("UPDATE_SHOW", updateShow);
   yield takeEvery("FETCH_COMPLETED_SHOWS", fetchCompleted);
   yield takeEvery("COMPLETED_SHOWS", completeShow);
+  yield takeEvery("RATE_SHOW", rateShow);
 }
 export default showsSagas;

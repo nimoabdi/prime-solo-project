@@ -11,7 +11,7 @@ body {
 
 img {
   display: inline-block;
-  max-width: 100%;
+  max-width: 20%;
 }
 
 /* --------------------------------------------------------------------------------
@@ -110,3 +110,5 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+
