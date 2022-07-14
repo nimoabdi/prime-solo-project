@@ -21,6 +21,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import SearchList from '../SearchList/SearchList';
 import CurrentWatch from '../CurrentWatch/CurrentWatch';
 import Watched from '../Watched/Watched';
+import RatingList from '../RatingList/RatingList';
 
 import './App.css';
 
@@ -90,7 +91,13 @@ function App() {
           <Watched />
         </ProtectedRoute>
 
-
+        <ProtectedRoute
+        
+        exact 
+        path="/ratinglist"
+        >
+          <RatingList />
+        </ProtectedRoute>
 
           <Route
             exact
