@@ -19,6 +19,11 @@ function CurrentWatch() {
 
   return (
     <>
+    <div>
+        <button className="btn btn-block" key={shows.id} onClick={()=> history.push(`/search/`)} >
+            Search Series
+        </button>
+      </div>
     {/* {JSON.stringify(shows)} */}
       <div>
         {shows &&
@@ -35,11 +40,7 @@ function CurrentWatch() {
             );
           })}
       </div>
-      <div>
-        <button key={shows.id} onClick={()=> history.push(`/search/${shows.id}`)} >
-            Search
-        </button>
-      </div>
+      
     </>
   );
 }

@@ -15,10 +15,11 @@ function Completed({show}) {
         <div>
              <Stack spacing={2}>
              <Typography component="legend">Rate Show</Typography> 
-          <Rating name="half-rating" defaultValue={0} precision={0.1} />
-        </Stack>
-            Title: {show.name}
+          <Rating name="half-rating" defaultValue={3.5} precision={0.5} />
+          Title: {show.name}
             <img className= "img" src={show.image} alt={show.title} />
+        </Stack>
+            
 
         </div>
     )
