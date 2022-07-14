@@ -20,7 +20,7 @@ function Watched() {
   return (
     <div>
       {updatedShows.map((show) => {
-        <ShowRating />
+       
         return <Completed key={show.id} show={show} />
         
       })}
