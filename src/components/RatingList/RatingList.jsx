@@ -8,6 +8,13 @@ function RatingList() {
     return (
         <ul className='ratelist'>
             <li>
+                <Typography>
+                    <p> I rated this:
+                    <Rating name="half-rating" defaultValue={5} />
+                    </p>
+                    <img src='../images/teentitansolo.jpg' />
+                </Typography>    
+                
                 <Typography >
                 <p> Badra rated this:
                 <Rating name="half-rating" defaultValue={5} />
