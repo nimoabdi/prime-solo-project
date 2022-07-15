@@ -24,6 +24,9 @@ function Nav() {
         {/* If a user is logged in, show these links */}
         {user.id && (
           <>
+          <Link className="navLink" to="/Home">
+          Home
+        </Link>
             <Link className="navLink" to="/Currentwatch">
               Currently Watching
             </Link>
