@@ -31,7 +31,7 @@ function Shows({ Shows }) {
       type: "UPDATE_SHOW",
       payload: Shows.id
     });
-    history.push('/watchedlist')
+    // history.push('/watchedlist')
     console.log("showsReducer------>", Shows);
 };
 

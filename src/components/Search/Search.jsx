@@ -17,6 +17,7 @@ function Search() {
 
         })
         console.log('searching for show ' + searchShow);
+        setSearchShow('');
     };
 
     return (
