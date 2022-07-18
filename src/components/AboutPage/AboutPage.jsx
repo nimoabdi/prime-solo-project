@@ -16,18 +16,17 @@ function AboutPage() {
         <ol>Material UI</ol>
         <ol>Node</ol>
         <ol>Express</ol>
+        <ol>TV maze API</ol>
       </ul>
+
       <h3>Thank You</h3>
       <ul>
         <ol>Edan</ol>
-        <ol> GaimanCohort</ol>
+        <ol> Gaiman Cohort</ol>
         <ol> Prime Academy</ol>
         <ol> Friends and Family</ol>
       </ul>
 
-     
-
-     
     </div>
   );
 }
