@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Search from '../Search/Search';
+import './SearchList.css';
+
+import Typography from '@mui/material/Typography';
 
 
 function SearchList() {
@@ -40,10 +43,12 @@ console.log('searchReducer------>',shows)
               
               <div key={item.id}>
         <h3 className= "title">{item.show.name}</h3>
-        <img className= "img" src={push} />
-        <h3 className= "genre">{item.show.genres}</h3>
-        <h3 className= "summary" dangerouslySetInnerHTML={{__html: item.show.summary}}>
-        </h3>
+        <img className= "search_img" src={push} />
+        <Typography variant="h5" className= "genre">{item.show.genres}</Typography>
+        
+        <Typography align="center" className= "summary" dangerouslySetInnerHTML={{__html: item.show.summary}}>
+          </Typography>
+        
 
         <button 
                   name={item.show.name}

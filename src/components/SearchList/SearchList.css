@@ -1,0 +1,8 @@
+.search_img {
+display : flex;
+flex-wrap: wrap;
+margin: 20px;
+width: 500px;
+height: 500px;
+}
+

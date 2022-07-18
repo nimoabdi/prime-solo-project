@@ -1,0 +1,14 @@
+/* li {
+    border: 1px solid black;
+  }
+   */
+.rating_img {
+display : flex;
+flex-wrap: wrap;
+margin: 20px;
+width: 500px;
+height: 550px;
+padding-bottom: 20px;
+padding-top: 20px;
+}
+  

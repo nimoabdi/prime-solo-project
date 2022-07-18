@@ -1,10 +1,12 @@
 import './Home.css'
+import React from 'react';
+import soloprov from '../assets/soloprov.mp4'
+
 function Home (){
 
     return(
-        <div class='homepage'>
-
-        <img className='homepage' src="../images/dgif.gif" />
+        <div className='homepage'>
+            <video src={soloprov} autoPlay loop muted />
         </div>
     )
 }

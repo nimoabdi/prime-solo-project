@@ -44,13 +44,13 @@ function Shows({ Shows }) {
 };
 
   return (
-    <Grid >
-    <Card className="flex-fill" sx={{ maxWidth: 345 }} >
+    
+    <Card className="flex-fill" sx={{ maxWidth: 345}} elevation={1} >
       <CardMedia
       // {Shows.name}
       component="img"
       alt="Shows Image"
-      height="300"
+      height="250"
       
       image= {Shows.image}
       />
@@ -68,7 +68,7 @@ function Shows({ Shows }) {
         add to watched
       </Button>
     </Card >
-    </Grid>
+  
   );
 }
 

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import Shows from "../Shows/Shows";
+import { Grid, Box } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 
 
 function CurrentWatch() {
@@ -25,7 +27,16 @@ function CurrentWatch() {
         </button>
       </div>
     {/* {JSON.stringify(shows)} */}
-      <div>
+
+    <Box mt={5}>
+     
+         
+          
+      
+      <Grid container spacing={3}
+      rowSpacing={3}
+      columnSpacing={3}
+       >
         {shows &&
           shows.map((shows) => {
             // let push = item.show.image && item.show.image.original
@@ -39,7 +50,10 @@ function CurrentWatch() {
               
             );
           })}
-      </div>
+          
+      </Grid>
+      </Box>
+      
       
     </>
   );

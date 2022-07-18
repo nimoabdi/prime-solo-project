@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const ratingItems = require('../modules/rating.data');
 
-// DO NOT MODIFY THIS FILE FOR BASE MODE
+
 
 // PUT Route
 router.put('/like/:id', (req, res) => {
