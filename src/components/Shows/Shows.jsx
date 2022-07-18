@@ -45,7 +45,7 @@ function Shows({ Shows }) {
 
   return (
     
-    <Card className="flex-fill" sx={{ maxWidth: 345}} elevation={1} >
+    <Card className="flex-fill" sx={{ maxWidth: 550}} elevation={1} >
       <CardMedia
       // {Shows.name}
       component="img"
@@ -54,6 +54,7 @@ function Shows({ Shows }) {
       
       image= {Shows.image}
       />
+
         <CardContent>
       <Typography gutterBottom variant="h7" >
       Title: {Shows.name}
@@ -61,7 +62,7 @@ function Shows({ Shows }) {
 
         </CardContent>
       
-      <Button variant="primary" size="small" className="btn btn-block" onClick={handleDelete}>
+      <Button variant="secondary" size="small" className="btn btn-block" onClick={handleDelete}>
         Delete
       </Button>
       <Button variant="primary" size="small" className="btn btn-block" onClick={Watched}>

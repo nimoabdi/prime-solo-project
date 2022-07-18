@@ -2,4 +2,14 @@ img {
     display : flex;
     flex-wrap: wrap;
     margin: 20px;
+    background-position: center;
+    width: 20%;
+    object-fit: cover;
   }
+.flex-fill {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.classes.img {
+  width: 80%;
+}

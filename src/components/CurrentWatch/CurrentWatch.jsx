@@ -34,8 +34,7 @@ function CurrentWatch() {
           
       
       <Grid container spacing={3}
-      rowSpacing={3}
-      columnSpacing={3}
+    
        >
         {shows &&
           shows.map((shows) => {
@@ -43,10 +42,10 @@ function CurrentWatch() {
             console.log("The list item is:");
 
             return (
-              <>
+              <Grid  key={shows.id} item xs={3} >
                 <Shows Shows={shows} /> 
                 
-              </>
+              </Grid>
               
             );
           })}

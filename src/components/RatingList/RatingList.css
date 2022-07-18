@@ -5,10 +5,26 @@
 .rating_img {
 display : flex;
 flex-wrap: wrap;
-margin: 20px;
-width: 500px;
-height: 550px;
+/* margin: 20px; */
+width: 450px;
+height: 450px;
 padding-bottom: 20px;
-padding-top: 20px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+.users {
+    margin: 10px;
+}
+h1{
+    text-align: center;
+    padding-bottom: 80px;
+    padding-top: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    border: 2px solid;
+    border-color: steelblue;
+}
+li {
+    
 }
   

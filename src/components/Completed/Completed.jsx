@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
+import './Completed.css';
 
 function Completed({show}) {
     const dispatch = useDispatch();
@@ -14,10 +15,10 @@ function Completed({show}) {
         
         <div>
              <Stack spacing={2}>
-             <Typography component="legend">Rate Show</Typography> 
+             <Typography variant="h5" component="legend">Rate Show</Typography> 
           <Rating name="half-rating" defaultValue={0.1} precision={0.5} />
           Title: {show.name}
-            <img className= "img" src={show.image} alt={show.title} />
+            <img className= "watched.img" src={show.image} alt={show.title} />
         </Stack>
             
 
